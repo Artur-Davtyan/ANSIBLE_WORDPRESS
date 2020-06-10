@@ -1,9 +1,6 @@
 # The network name 
 network: wordpress
 
-# The volume name 
-#volume_name: www
-
 # Mysql root pass
 root_pass: pass1234
 
