@@ -1,0 +1,9 @@
+---
+
+
+  - name: create network
+    docker_network:
+      name: "{{ network }}"
+  - name: Create a volume
+    docker_volume:
+      name: www

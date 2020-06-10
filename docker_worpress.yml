@@ -1,0 +1,41 @@
+---
+
+# Install docker and python-docker packeges. 
+
+ - name: setup pre-requisites
+   hosts: servers
+   become: yes
+   roles:
+     - Docker_installation
+     
+# creating necessary volumes and network
+
+ - name: Creating network and volume
+   hosts: servers
+   become: yes
+   roles:
+     - Network_volume_creation
+
+# creating database container 
+
+ - name: create database container 
+   hosts: servers
+   become: yes
+   roles:
+     - Mysql_container
+
+# Creating PHP container 
+
+ - name: Creating container image and container
+   hosts: servers
+   become: yes
+   roles:
+     - PHP_image_container
+
+# Creating nginx container 
+
+ - name: Nginx container
+   hosts: servers
+   become: yes
+   roles:
+     - Nginx_container 

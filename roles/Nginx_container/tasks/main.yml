@@ -1,0 +1,17 @@
+---
+
+
+  - name: Creating nginx container
+    docker_container:
+      name: nginx
+      image: nginx:latest
+      ports:
+        - 80:80
+      volumes:
+        - www:/var/www/html
+        - /home/ansible/docker/wordpress.conf:/etc/nginx/conf.d/default.conf
+      networks:
+        - name: "{{ network }}" 
+      state: started
+
+

@@ -1,0 +1,20 @@
+# The network name 
+network: wordpress
+
+# The volume name 
+#volume_name: www
+
+# Mysql root pass
+root_pass: pass1234
+
+# Wordpress db name
+db_name: wordpress
+
+# Wordpress db user
+db_user: wordpress
+
+# db user pass
+user_pass: wp123456789!
+
+# Created image name
+image_name: phpimage

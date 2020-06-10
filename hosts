@@ -1,0 +1,9 @@
+
+#ansible_host -the ip addres of your target host
+#ansible_user -username on target host tht we use for ssh connection 
+#ansible_ssh_private_key - give the location of you ssh id_rsa.pub key ($USER - is yourq username )
+
+
+[servers]
+
+server1 ansible_host= ansible_user=ansible ansible_connection=ssh ansible_ssh_private_key_file=/home/$USER/.ssh/id_rsa.pub

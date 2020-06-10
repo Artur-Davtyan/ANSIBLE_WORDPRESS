@@ -1,0 +1,23 @@
+---
+
+
+  - name: copy files 
+    copy:
+      src: ./docker
+      dest: /home/ansible/
+
+  - name: Build an image 
+    docker_image:
+      path: /home/ansible/docker
+      name: "{{ image_name }}"
+
+  - name: creating php container 
+    docker_container:
+      name: php
+      image: "{{ image_name }}"
+      volumes:
+        - www:/var/www/html
+      entrypoint: /bin/bash -c  '/usr/sbin/php-fpm7.3 -c /etc/php/7.3/fpm/php-fpm.conf && tail -f /dev/null' 
+      state: started
+      networks:
+        - name: "{{ network }}"
